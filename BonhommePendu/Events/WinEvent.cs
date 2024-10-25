@@ -9,6 +9,13 @@ namespace BonhommePendu.Events
 
         // TODO: Compléter
         public WinEvent(GameData gameData) {
+            if (gameData.HasGuessedTheWord)
+            {
+                Events = new List<GameEvent>
+                {
+                    new WinEvent(gameData)
+                };
+            }
         }
     }
 }
